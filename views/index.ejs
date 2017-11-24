@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%- hostname %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+  </head>
+  <body>
+    <div>
+      <div>
+        <h2>Udvozol a <%- hostname%>!</h2>
+      </div>
+      <div>
+        <h4>Parametereim</h4>
+      </div>
+      <div>
+        <span>Architektura:</span>
+        <span><%- arch%></span>
+      </div>
+      <div>
+          <span>CPU cores:</span>
+          <ul>
+            <% cpuCores.forEach(function(cpuCore) { %>
+              <li><%= cpuCore.model %></li>
+            <% }); %>
+          </ul>
+      </div>
+      <div>
+          <span>Szabad memoria:</span>
+          <span><%- freemem%> MByte</span>
+      </div>
+      <div>
+          <span>Platform:</span>
+          <span><%- platform%></span>
+      </div>
+      <div>
+          <span>Release:</span>
+          <span><%- release%></span>
+      </div>
+      <div>
+          <span>Mukodesi idp</span>
+          <span><%- uptime%> masodperc</span>
+      </div>
+      <div>
+          <h4>Baratsagos udvozles</h4>
+        </div>
+      <div>
+        <span>Kerlek add meg a neved:</span>
+        <input id="name" type="text" />
+        <button type="button" onclick="welcome()">OK</button>
+      </div>
+    </div>
+    <script>
+      function welcome() {
+        const nameElement = document.getElementById('name');
+        if (nameElement) {
+          alert(`Szia ${nameElement.value}, legyen szep napod!`);
+        }
+      }
+    </script>
+  </body>
+</html>
